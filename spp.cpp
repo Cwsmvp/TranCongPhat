@@ -1,6 +1,4 @@
-#include <algorithm>
-#include <cstdint>
-#include <iostream>
+#include <bits/stdc++.h>
 
 using namespace std;
 
@@ -31,12 +29,9 @@ int main() {
     cin.tie(nullptr);
 
     int a, b;
-    if (!(cin >> a >> b)) {
-        return 0;
-    }
-
-    int64_t total = 0;
-    for (int64_t i = max(a, 1); i <= b; ++i) {
+    cin >> a >> b;
+    int total = 0;
+    for (int i = max(a, 1); i <= b; ++i) {
         if (check_spp(static_cast<int>(i))) {
             ++total;
         }

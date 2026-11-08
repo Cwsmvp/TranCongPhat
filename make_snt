@@ -1,0 +1,30 @@
+#include <bits/stdc++.h>
+using namespace std;
+const int N = 2e6 + 5;
+bool check[N];
+int a,b,n;
+void make_snt(int n)
+{
+    check[0] = check[1] = 1;
+    for(int i = 2 ; i <= n ; i++)
+    {
+        if(!check[i])
+        {
+            for(int j = i + i ; j <= n ; j += i)
+             {
+                check[j] = 1;
+             }
+        }
+                
+    }
+}
+
+int main() 
+{
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);cout.tie(0);
+    cin >> a >> b;
+    make_snt(b);
+    for(int i = a ; i <= b ; i++)
+        if(!check[i]) cout << i << "\n";
+}
